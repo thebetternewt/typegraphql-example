@@ -24,7 +24,7 @@ export class User extends BaseEntity {
   @Column()
   lastName: string;
 
-  @Field()
+  @Field({ complexity: 3 })
   name(@Root() parent: User): string {
     return `${parent.firstName} ${parent.lastName}`;
   }
